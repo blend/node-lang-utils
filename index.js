@@ -192,6 +192,18 @@ function requireFunction(v, name) {
   }
 }
 
+function getPath(obj, path) {
+  if (!obj) return null;
+
+  var cur = obj;
+  for (var i = 0; i < path.length; i += 1) {
+    cur = cur[path[i]];
+    if (!cur) return null;
+  }
+
+  return cur;
+}
+
 module.exports = {
   // Async wrappers.
   asyncFilter2: asyncFilter2,
@@ -227,5 +239,6 @@ module.exports = {
 
   // Misc.
   isNullOrUndefined: isNullOrUndefined,
-  md5: md5
+  md5: md5,
+  getPath: getPath
 };

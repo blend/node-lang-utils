@@ -204,6 +204,25 @@ function getPath(obj, path) {
   return cur;
 }
 
+function arrDeref(o, ref, i) {
+  return !ref || !o ? o : (o[ref.slice(0, i ? -1 : ref.length)]);
+}
+
+function dotDeref(o, ref) {
+  return !ref || !o ? o : ref.split('[').reduce(arrDeref, o);
+}
+
+function setObjWithPath(obj, path, value) {
+  var paths = path.split('.');
+  var lastPath = paths.pop();
+  var lastObj = paths.reduce(dotDeref, obj);
+  lastObj[lastPath] = value;
+}
+
+function selectObjWithPath(obj, path) {
+  return path.split('.').reduce(dotDeref, obj);
+}
+
 module.exports = {
   // Async wrappers.
   asyncFilter2: asyncFilter2,
@@ -240,5 +259,10 @@ module.exports = {
   // Misc.
   isNullOrUndefined: isNullOrUndefined,
   md5: md5,
-  getPath: getPath
+
+  // Object path selection
+  getPath: getPath,
+  setObjWithPath: setObjWithPath,
+  selectObjWithPath: selectObjWithPath
 };
+

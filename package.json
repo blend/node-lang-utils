@@ -1,6 +1,6 @@
 {
   "name": "langUtils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "https://github.com/blendlabs/node-lang-utils",
   "dependencies": {
     "async": "~0.2.9",

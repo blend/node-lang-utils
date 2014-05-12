@@ -223,6 +223,10 @@ function selectObjWithPath(obj, path) {
   return path.split('.').reduce(dotDeref, obj);
 }
 
+function fileExt(filename) {
+  return _.last(filename.split('.'));
+}
+
 module.exports = {
   // Async wrappers.
   asyncFilter2: asyncFilter2,
@@ -259,10 +263,10 @@ module.exports = {
   // Misc.
   isNullOrUndefined: isNullOrUndefined,
   md5: md5,
+  fileExt: fileExt,
 
   // Object path selection
   getPath: getPath,
   setObjWithPath: setObjWithPath,
   selectObjWithPath: selectObjWithPath
 };
-

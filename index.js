@@ -47,10 +47,6 @@ var endsWith = function(str, suffix) {
   return str.indexOf(suffix, str.length - suffix.length) !== -1;
 };
 
-var strContains = function(s, t) {
-  return s.indexOf(t) !== -1;
-};
-
 var provide = function(cb, v) {
   assert(_.isFunction(cb));
 
@@ -240,7 +236,7 @@ module.exports = {
 
   // String utils.
   str: str,
-  strContains: strContains,
+  strContains: _.contains, // TODO - remove this
   startsWith: startsWith,
   endsWith: endsWith,
 

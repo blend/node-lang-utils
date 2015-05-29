@@ -49,9 +49,13 @@ var endsWith = function(str, suffix) {
 
 var provide = function(cb, v) {
   assert(_.isFunction(cb));
+  var origArgs = arguments;
 
   return function(err, x) {
     if (err) return cb(err);
+
+    if (origArgs.length === 1) return cb();
+
     cb(null, v);
   };
 };

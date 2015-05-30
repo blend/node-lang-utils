@@ -192,16 +192,11 @@ function requireFunction(v, name) {
   }
 }
 
+/**
+ * @deprecated Use _.property instead.
+ */
 function getPath(obj, path) {
-  if (!obj) return null;
-
-  var cur = obj;
-  for (var i = 0; i < path.length; i += 1) {
-    cur = cur[path[i]];
-    if (!cur) return null;
-  }
-
-  return cur;
+  return _.property(path)(obj);
 }
 
 function arrDeref(o, ref, i) {

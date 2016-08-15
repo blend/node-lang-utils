@@ -82,10 +82,6 @@ var asyncFlatMap = function(inputs, fn, cb) {
   );
 };
 
-var isNullOrUndefined = function(val) {
-  return _.isNull(val) || _.isUndefined(val);
-};
-
 // TODO (em) JSON.stringify is not a unique hash... find a better hash.
 var uniqObjs = function(objs) {
   var m = {};
@@ -256,7 +252,6 @@ module.exports = {
   mapPick: mapPick,
 
   // Misc.
-  isNullOrUndefined: isNullOrUndefined,
   md5: md5,
   fileExt: fileExt,
 

@@ -1,11 +1,10 @@
 {
   "name": "langUtils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/blendlabs/node-lang-utils",
   "dependencies": {
-    "async": "^0.9.0",
-    "crypto": "0.0.3",
-    "lodash": "^3.8.0"
+    "async": "2.x.x",
+    "lodash": "4.x.x"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

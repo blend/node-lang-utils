@@ -48,7 +48,7 @@ var endsWith = function(str, suffix) {
 };
 
 var provide = function(cb, v) {
-  assert(_.isFunction(cb));
+  assert(_.isFunction(cb), 'langUtils.provide cb is not a function');
   var origArgs = arguments;
 
   return function(err, x) {
